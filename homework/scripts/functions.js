@@ -105,28 +105,37 @@
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-function reverse(string){
-    "use strict";
-    if(!_.isString(string)) {
-    	throw 'The argument must be a string.';
-    }
-    if(typeof(string) != 'string') {
-    	throw 'The argument must be a string.';
-    }
-    if(string.length < 1) {
-    	throw 'The argument must have more than one character.';
-    }
-    return string.split("").reverse().join("");
-}
-
-// // ---------------------
-// // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
-// // ---------------------
-
-// function findLongestWord(words){
+// function reverse(string){
 //     "use strict";
-//     //...
+//     // if(!_.isString(string)) {
+//     // 	throw 'The argument must be a string.';
+//     // }
+//     if(typeof(string) !== 'string') {
+//     	throw 'The argument must be a string.';
+//     }
+//     if(string.length < 1) {
+//     	throw 'The argument must have more than one character.';
+//     }
+//     return string.split("").reverse().join("");
 // }
+
+// ---------------------
+// Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
+// ---------------------
+
+function findLongestWord(words){
+  "use strict";
+  if(typeof(words) != 'object') {
+  	throw 'The argument must be an array of strings';
+  }
+  var lgth = 0;
+  for(var i = 0; i < words.length; i++) {
+  	if( words[i].length > lgth ) {
+  		var longestWord = words[i];
+  		return longestWord.length;
+  	}
+  }
+}
 
 // // ---------------------
 // // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.

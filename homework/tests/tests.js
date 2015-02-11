@@ -101,36 +101,36 @@ var expect = chai.expect;
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-describe('reverse', function() {
-	it('should allow only a string', function() {
-		expect(function() {reverse('')}).to.throw('The argument must have more than one character.');
-		expect(function() {reverse(1)}).to.throw('The argument must be a string.');
-		expect(function() {reverse(true)}).to.throw('The argument must be a string.');
-		expect(function() {reverse([1, 'a'])}).to.throw('The argument must be a string.');
-		expect(function() {reverse({ key: value })}).to.throw('The argument must be a string.');
-	});
+// describe('reverse', function() {
+// 	it('should allow only a string', function() {
+// 		expect(function() {reverse('')}).to.throw('The argument must have more than one character.');
+// 		expect(function() {reverse(1)}).to.throw('The argument must be a string.');
+// 		expect(function() {reverse(true)}).to.throw('The argument must be a string.');
+// 		expect(function() {reverse([1, 'a'])}).to.throw('The argument must be a string.');
+// 		// expect(function() {reverse({ key: value })}).to.throw('The argument must be a string.');
+// 	});
 
-	it('should return a reversed string', function() {
-		expect(reverse('alex hidalgo')).to.equal('ogladih xela');
+// 	it('should return a reversed string', function() {
+// 		expect(reverse('alex hidalgo')).to.equal('ogladih xela');
+// 	});
+// });
+
+// ---------------------
+// Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
+// ---------------------
+
+describe('findLongestWord', function() {
+	it('should not take numeric arguments', function() {
+		expect(function() {findLongestWord('')}).to.throw('The argument must be an array of strings');
+		expect(function() {findLongestWord(1)}).to.throw('The argument must be an array of strings');
+		expect(function() {findLongestWord(true)}).to.throw('The argument must be an array of strings');
+		expect(function() {findLongestWord([1, 'a'])}).to.throw('The argument must be an array of strings');
+		// expect(function() {findLongestWord({ key: value })}).to.throw('The argument must be an array of strings');
+	});
+	it('should return length of the longest word', function() {
+		expect(findLongestWord(['alex', 'hidalgo'])).to.equal(7);
 	});
 });
-
-// // ---------------------
-// // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
-// // ---------------------
-
-// describe('findLongestWord', function() {
-// 	it('should not take numeric arguments', function() {
-// 		expect(function() {findLongestWord('')}).to.throw('The argument must be an array of strings');
-// 		expect(function() {findLongestWord(1)}).to.throw('The argument must be an array of strings');
-// 		expect(function() {findLongestWord(true)}).to.throw('The argument must be an array of strings');
-// 		expect(function() {findLongestWord([1, 'a'])}).to.throw('The argument must be an array of strings');
-// 		expect(function() {findLongestWord({ key: value })}).to.throw('The argument must be an array of strings');
-// 	})
-// 	it('should return length of the longest word', function() {
-// 		expect(findLongestWord(['alex', 'hidalgo'])).equalto.(7);
-// 	})
-// })
 
 // // ---------------------
 // // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
